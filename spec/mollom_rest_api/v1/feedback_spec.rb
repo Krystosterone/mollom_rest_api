@@ -11,13 +11,13 @@ describe MollomRestApi::V1::Feedback do
       end
     end
 
-    context "when any contentId is specified (valid or invalid)", vcr: {cassette_name: "feedback/add/content_request", record: :new_episodes} do
+    context "when any contentId is specified (valid or invalid)", vcr: {cassette_name: "feedback/add/content_request"} do
       it "should have silently passed" do
         expect(MollomRestApi::V1::Feedback.add("spam", contentId: "some_id")).to be_nil
       end
     end
 
-    context "when any captchaId is specified (valid or invalid)", vcr: {cassette_name: "feedback/add/captcha_request", record: :new_episodes} do
+    context "when any captchaId is specified (valid or invalid)", vcr: {cassette_name: "feedback/add/captcha_request"} do
       it "should have silently passed" do
         expect(MollomRestApi::V1::Feedback.add("spam", captchaId: "some_id")).to be_nil
       end
