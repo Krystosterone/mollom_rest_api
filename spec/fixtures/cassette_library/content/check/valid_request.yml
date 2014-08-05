@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/v1/content
+    body:
+      encoding: US-ASCII
+      string: authorName=Jean-Luc%20Picard&postBody=Some%20text%20right%20over%20here%21&postTitle=My%20Title
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="1ldx8h5kvvdsp108es5r54yidl1r8z75", oauth_nonce="W4ny3BPOWLl8E71ysa2w4lcJPr1LDHDg4yKIDVF7Y",
+        oauth_signature="n1Ycqalo4VOH5zAhid%2FpRZ9piBM%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1403703780", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 25 Jun 2014 13:44:21 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"code":"200","content":{"id":"TEST1up51ut7qyu2b1","spamScore":"0.5","reason":"some
+        secret reason","postTitle":"My Title","postBody":"Some text right over here!","spamClassification":"unsure"}}'
+    http_version: 
+  recorded_at: Wed, 25 Jun 2014 13:43:01 GMT
+recorded_with: VCR 2.9.2

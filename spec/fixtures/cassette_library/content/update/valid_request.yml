@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/v1/content/TESTmh3q39o9ktwj13
+    body:
+      encoding: US-ASCII
+      string: checks=spam&postBody=My%20modified%20body%21
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="1ldx8h5kvvdsp108es5r54yidl1r8z75", oauth_nonce="qroaXT4mKj3rIwC2lfpkgysGhHiCPApuo0Qm3gq5Mw",
+        oauth_signature="b5ztrWOozW88e%2BWXjFqCOaT2jkU%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1403894412", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Fri, 27 Jun 2014 18:41:34 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"code":"200","content":{"id":"TESTmh3q39o9ktwj13","spamScore":"0.5","reason":"some
+        secret reason","postBody":"My modified body!","spamClassification":"unsure"}}'
+    http_version: 
+  recorded_at: Fri, 27 Jun 2014 18:40:12 GMT

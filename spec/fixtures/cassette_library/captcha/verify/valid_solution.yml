@@ -1,0 +1,46 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/v1/captcha/TEST1qravn2ikcz0k1
+    body:
+      encoding: US-ASCII
+      string: solution=correct
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="1ldx8h5kvvdsp108es5r54yidl1r8z75", oauth_nonce="BA6Z75guepi0WDXPpTZpGQ3TMJ0TeRrNYBO4dRq8",
+        oauth_signature="YnQuwZxDPQF66PpJhg6isLrqtk4%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1403708812", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 25 Jun 2014 15:08:12 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"code":"200","captcha":{"id":"TEST1qravn2ikcz0k1","solved":"1","reason":"Correct
+        response to image captcha."}}'
+    http_version: 
+  recorded_at: Wed, 25 Jun 2014 15:06:52 GMT
+recorded_with: VCR 2.9.2

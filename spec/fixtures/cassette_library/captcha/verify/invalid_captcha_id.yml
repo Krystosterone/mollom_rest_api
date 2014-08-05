@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/v1/captcha/inexistent_id
+    body:
+      encoding: US-ASCII
+      string: solution=solution
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="1ldx8h5kvvdsp108es5r54yidl1r8z75", oauth_nonce="76mDExdsBWt5hD4x7z8iPU4xFi0g4q30okKWneGWNE",
+        oauth_signature="7%2F5ZUOxK7CTAGIDKAmKTEFNJOmM%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1403708864", oauth_version="1.0"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 25 Jun 2014 15:09:03 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"code":"404","message":"Captcha not found."}'
+    http_version: 
+  recorded_at: Wed, 25 Jun 2014 15:07:44 GMT
+recorded_with: VCR 2.9.2

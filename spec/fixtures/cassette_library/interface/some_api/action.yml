@@ -1,0 +1,32 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/vtest01/ticket
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="1ldx8h5kvvdsp108es5r54yidl1r8z75", oauth_nonce="5AEpaNryO7al2Ukkx6syc12oBt7eXTMx4BivFwRHI",
+        oauth_signature="nkPENheGqCfWAVEMUzt9YntS1KI%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1403711119", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    body:
+      encoding: UTF-8
+      string: '{"code":"200","ticket":"Valid response."}'
+  recorded_at: Wed, 25 Jun 2014 15:45:19 GMT
+recorded_with: VCR 2.9.2
