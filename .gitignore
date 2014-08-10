@@ -19,4 +19,4 @@ tmp
 .ruby-version
 .ruby-gemset
 .sass-cache
-log/**
+log/test.log
