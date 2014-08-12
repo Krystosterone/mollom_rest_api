@@ -1,19 +1,36 @@
 require 'spec_helper'
 
 describe MollomRestApi::Interface do
-  describe :api_method, vcr: {cassette_name: 'interface/some_api/action'} do
+  describe 'a simple post action', vcr: {cassette_name: 'interface/some_api/a_post_action'} do
     it "should call the correct url using the method name" do
-      expect(MollomRestApi::VTest01::Ticket.an_action).to eq('Valid response.')
+      expect(MollomRestApi::VTest01::Ticket.a_post_action).to eq('Valid response.')
     end
 
-    include_examples "api error handling", class_under_test: MollomRestApi::VTest01::Ticket, method_under_test: :an_action
+    include_examples "api error handling", class_under_test: MollomRestApi::VTest01::Ticket, method_under_test: :a_post_action
   end
 
-  describe :api_method, vcr: {cassette_name: 'interface/some_api/another_action'} do
+  describe 'a post action with all arguments specified', vcr: {cassette_name: 'interface/some_api/an_overriden_post_action'} do
     it "should call the correct url using the overriden properties in the method" do
-      expect(MollomRestApi::VTest01::Ticket.another_action).to eq('Valid response.')
+      expect(MollomRestApi::VTest01::Ticket.an_overriden_post_action).to eq('Valid response.')
     end
 
-    include_examples "api error handling", class_under_test: MollomRestApi::VTest01::Ticket, method_under_test: :another_action
+    include_examples "api error handling", class_under_test: MollomRestApi::VTest01::Ticket, method_under_test: :an_overriden_post_action
   end
+
+  describe 'a get action with all arguments specified', vcr: {cassette_name: 'interface/some_api/an_overriden_get_action'} do
+    it "should call the correct url using the overriden properties in the method" do
+      expect(MollomRestApi::VTest01::Ticket.an_overriden_get_action).to eq('Valid response.')
+    end
+
+    include_examples "api error handling", class_under_test: MollomRestApi::VTest01::Ticket, method_under_test: :an_overriden_get_action
+  end
+
+  describe 'a get action to fetch a list', vcr: {cassette_name: 'interface/some_api/a_get_list_action'} do
+    it "should call the correct url using the overriden properties in the method" do
+      expect(MollomRestApi::VTest01::Ticket.a_get_list_action).to eq('Valid response.')
+    end
+
+    include_examples "api error handling", class_under_test: MollomRestApi::VTest01::Ticket, method_under_test: :a_get_list_action
+  end
+
 end

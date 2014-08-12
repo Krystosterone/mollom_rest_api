@@ -1,0 +1,26 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dev.mollom.com/vtest02/override/list?status=active
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_consumer_key="1mkno2c8bsepo12ewu7v0mmpxro77o3u", oauth_nonce="SEXVLHY0YeAwgEblr04n7EVraDtDALwNWIXP77ms",
+        oauth_signature="C1TiejQ0csF2nu3A9Ldm23rMnmY%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1407346386", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    body:
+      encoding: UTF-8
+      string: '{"code":"200","override":"Valid response."}'
+  recorded_at: Wed, 25 Jun 2014 15:45:19 GMT
+recorded_with: VCR 2.9.2

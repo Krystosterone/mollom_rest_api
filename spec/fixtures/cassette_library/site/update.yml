@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/v1/site/1mkno2c8bsepo12ewu7v0mmpxro77o3u
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="1mkno2c8bsepo12ewu7v0mmpxro77o3u", oauth_nonce="kxcQodrePXxBjnj1jamjWpUAo4VgsAtS063K0NnT7bo",
+        oauth_signature="rSsJfmdMqVygZb1iWR8pZEQ0LBY%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1407344156", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 06 Aug 2014 16:56:18 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"code":"200","site":{"publicKey":"1mkno2c8bsepo12ewu7v0mmpxro77o3u","privateKey":"z2urchz11o21b9m76l0x51iz1ize75g0","expectedLanguages":null}}'
+    http_version: 
+  recorded_at: Wed, 06 Aug 2014 16:55:56 GMT
+recorded_with: VCR 2.9.2

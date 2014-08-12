@@ -6,23 +6,43 @@ class MollomRestApi::Interface
     protected
 
     def post(request_parameters = {}, path_parameters = [], version = nil, path = nil)
-      ensure_configuration_is_valid!
+      request(:post, request_parameters, path_parameters, version, path)
+    end
 
-      version ||= version_from_class_name
-      path ||= path_from_class_name
-      url = url(path_parameters, version, path)
-
-      response = MollomRestApi.oauth_access_token.post(url, request_parameters, REQUEST_HEADERS)
-
-      throw_api_exception_using(response) unless response.code == '200'
-      JSON.parse(response.body)[path]
+    def get(request_parameters = {}, path_parameters = [], version = nil, path = nil)
+      request(:get, request_parameters, path_parameters, version, path)
     end
 
     private
 
+    def request(http_method, request_parameters, path_parameters, version, path)
+      ensure_configuration_is_valid!
+
+      version ||= version_from_class_name
+      path ||= path_from_class_name
+
+      request_arguments = request_arguments(http_method, path, path_parameters, request_parameters, version)
+      response = MollomRestApi.oauth_access_token.request(http_method, *request_arguments)
+
+      throw_api_exception_using(response) unless response.code == '200'
+
+      results_key = path_parameters.empty? && http_method == :get ? 'list' : path
+      JSON.parse(response.body)[results_key]
+    end
+
     def ensure_configuration_is_valid!
       MANDATORY_CONFIGURATIONS.each do |config|
         raise MollomRestApi::MissingConfig.new("Missing #{config}.") if MollomRestApi.send(config).nil?
+      end
+    end
+
+    def request_arguments(http_method, path, path_parameters, request_parameters, version)
+      url = url(path_parameters, version, path)
+
+      if http_method == :get
+        ["#{url}?#{request_parameters.to_query}", REQUEST_HEADERS]
+      elsif http_method == :post
+        [url, request_parameters, REQUEST_HEADERS]
       end
     end
 

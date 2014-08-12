@@ -3,12 +3,20 @@ module MollomRestApi
     class Ticket < MollomRestApi::Interface
       def self.create; end
 
-      def self.an_action
+      def self.a_post_action
         post
       end
 
-      def self.another_action
+      def self.an_overriden_post_action
         post({authorId: 9}, "delete", "vtest02", "override")
+      end
+
+      def self.a_get_list_action
+        get
+      end
+
+      def self.an_overriden_get_action
+        get({status: :active}, "list", "vtest02", "override")
       end
     end
   end
