@@ -47,8 +47,14 @@ class MollomRestApi::Interface
     end
 
     def url(path_parameters, version, path)
+      path_parameters << 'delete' if method_that_called_the_api_operation == 'delete'
       url_path = [path, path_parameters].flatten.compact.join('/')
       "#{MollomRestApi.url}/#{version}/#{url_path}"
+    end
+
+    def method_that_called_the_api_operation
+      method_nesting_level = 4
+      caller[method_nesting_level][/`([^']*)'/, 1]
     end
 
     def version_from_class_name

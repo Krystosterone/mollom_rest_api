@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dev.mollom.com/v1/site/1cu4vdx7a6m9c1jc2425k1o9r8me2mrz
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_consumer_key="1cu4vdx7a6m9c1jc2425k1o9r8me2mrz", oauth_nonce="SFQk35sI3nhSHZ82tjI8z0GiUTASR6wFNHvKLzPvEE",
+        oauth_signature="24fNpp4wf5ADykqUat2HQNjkwvU%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1407863313", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 12 Aug 2014 17:08:53 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"code":"200","site":{"publicKey":"1cu4vdx7a6m9c1jc2425k1o9r8me2mrz","privateKey":"1khj0vgpcqtjfwbbl5fr3wiykmr2ajro","url":"http://url","email":"an-email@gmail.com","platformName":"Drupal","platformVersion":"6.20","expectedLanguages":null}}'
+    http_version: 
+  recorded_at: Tue, 12 Aug 2014 17:08:33 GMT
+recorded_with: VCR 2.9.2

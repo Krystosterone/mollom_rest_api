@@ -1,0 +1,45 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/v1/site/1cu4vdx7a6m9c1jc2425k1o9r8me2mrz/delete
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="1cu4vdx7a6m9c1jc2425k1o9r8me2mrz", oauth_nonce="o5GxH4qzRJgR8ScVJq8cpIXTv5fG0MDhAmbtemIA4",
+        oauth_signature="ljbefcpvo1a5%2FBO8cRT1E0nD5jk%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1407863678", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 12 Aug 2014 17:14:58 GMT
+      Connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"code":"200"}'
+    http_version: 
+  recorded_at: Tue, 12 Aug 2014 17:14:38 GMT
+recorded_with: VCR 2.9.2

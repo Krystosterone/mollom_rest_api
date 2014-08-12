@@ -33,4 +33,11 @@ describe MollomRestApi::Interface do
     include_examples "api error handling", class_under_test: MollomRestApi::VTest01::Ticket, method_under_test: :a_get_list_action
   end
 
+  describe 'a delete action on a resource', vcr: {cassette_name: 'interface/some_api/delete'} do
+    it "should call the delete url on the resource" do
+      expect(MollomRestApi::VTest01::Ticket.delete).to eq('Valid response.')
+    end
+
+    include_examples "api error handling", class_under_test: MollomRestApi::VTest01::Ticket, method_under_test: :a_get_list_action
+  end
 end
