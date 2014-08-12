@@ -58,6 +58,6 @@ describe MollomRestApi::V1::Captcha do
       end
     end
 
-    include_examples "api error handling", class_under_test: MollomRestApi::V1::Captcha, method_under_test: :verify, method_args: [9000, 'a_solution']
+    include_examples "api error handling", class_under_test: MollomRestApi::V1::Captcha, method_under_test: :verify, method_args: [[9000], 'a_solution']
   end
 end

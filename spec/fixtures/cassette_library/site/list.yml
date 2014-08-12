@@ -1,0 +1,75 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dev.mollom.com/v1/site
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_consumer_key="1mkno2c8bsepo12ewu7v0mmpxro77o3u", oauth_nonce="z3zpJBCdAHK5SnerQMXSmvENyPNXHadizieIWSER0",
+        oauth_signature="6FvyyDr3QgQXDNmx1rBBLJE8lt4%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1407346705", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 06 Aug 2014 17:38:48 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"code":"200","list":{"site":[{"publicKey":"1cu4vdx7a6m9c1jc2425k1o9r8me2mrz","privateKey":"1khj0vgpcqtjfwbbl5fr3wiykmr2ajro","url":"http://url","email":"an-email@gmail.com","platformName":"Drupal","platformVersion":"6.20","expectedLanguages":null},{"publicKey":"geu7chlny71m18ve7inn41kuap9ztyja","privateKey":"16o5626oykcsophjt31p1lim986rm5cq","url":"http://url","email":"an-email@gmail.com","platformName":"Drupal","platformVersion":"6.20","expectedLanguages":null},{"publicKey":"44wvtjchwxaj1h90cqi1hxscwcpceylx","privateKey":"ton7cjeu271j15l94ip777uvv1pcgua3","url":"http://url","email":"an-email@gmail.com","platformName":"Drupal","platformVersion":"6.20","expectedLanguages":null}]}}'
+    http_version: 
+  recorded_at: Wed, 06 Aug 2014 17:38:26 GMT
+- request:
+    method: get
+    uri: http://dev.mollom.com/v1/site?count=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_consumer_key="1mkno2c8bsepo12ewu7v0mmpxro77o3u", oauth_nonce="XjaKn8ECob3Zt9XG7O6TZQwcDvhAb5CP8mAUvxqM",
+        oauth_signature="aN1KXhPx80F2Tht7VCnHaOnCkyY%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1407431443", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Thu, 07 Aug 2014 17:11:07 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"code":"200","list":{"site":[{"publicKey":"1cu4vdx7a6m9c1jc2425k1o9r8me2mrz","privateKey":"1khj0vgpcqtjfwbbl5fr3wiykmr2ajro","url":"http://url","email":"an-email@gmail.com","platformName":"Drupal","platformVersion":"6.20","expectedLanguages":null},{"publicKey":"geu7chlny71m18ve7inn41kuap9ztyja","privateKey":"16o5626oykcsophjt31p1lim986rm5cq","url":"http://url","email":"an-email@gmail.com","platformName":"Drupal","platformVersion":"6.20","expectedLanguages":null},{"publicKey":"44wvtjchwxaj1h90cqi1hxscwcpceylx","privateKey":"ton7cjeu271j15l94ip777uvv1pcgua3","url":"http://url","email":"an-email@gmail.com","platformName":"Drupal","platformVersion":"6.20","expectedLanguages":null}]}}'
+    http_version: 
+  recorded_at: Thu, 07 Aug 2014 17:10:43 GMT
+recorded_with: VCR 2.9.2
