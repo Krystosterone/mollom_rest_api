@@ -18,6 +18,10 @@ module MollomRestApi
       def self.an_overriden_get_action
         get({status: :active}, "list", "vtest02", "override")
       end
+
+      def self.delete
+        post({}, ['a_path_parameter'])
+      end
     end
   end
 end
