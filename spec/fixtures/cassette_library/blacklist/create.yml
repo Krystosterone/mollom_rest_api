@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/v1/blacklist/1lgj17lzuezlu1bn9ry4k3qz4k8nr42n
+    body:
+      encoding: US-ASCII
+      string: context=allFields&value=text
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="b06465615b3a8800ef79ca947b1addca", oauth_nonce="CP19Jf3MxtPxat0k5E4CARZ6PQJIZ8wsLkikBtbk",
+        oauth_signature="B0Cp%2FbPpz9ZaniKQ0Cbx5Z5WIuw%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1409677740", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Sep 2014 17:09:45 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"code":"200","entry":{"context":"allFields","created":"1409677772829","id":"41a0e033-3d6a-465b-87d5-1ef60476da62","match":"contains","note":"","reason":"unwanted","status":"1","value":"text"}}'
+    http_version: 
+  recorded_at: Tue, 02 Sep 2014 17:09:00 GMT
+recorded_with: VCR 2.9.2

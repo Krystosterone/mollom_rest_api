@@ -12,6 +12,7 @@ module MollomRestApi
   require 'mollom_rest_api/v1/captcha'
   require 'mollom_rest_api/v1/feedback'
   require 'mollom_rest_api/v1/site'
+  require 'mollom_rest_api/v1/blacklist'
 
   class << self
     attr_accessor :url, :public_key, :private_key, :oauth_options

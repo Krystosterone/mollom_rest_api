@@ -26,7 +26,12 @@ module MollomRestApi
         return false if target_class.nil?
 
         target_method = extract_method_from(method_name)
-        target_class.respond_to?(target_method)
+
+        receiver_public_methods_of(target_class).include?(target_method.to_sym)
+      end
+
+      def receiver_public_methods_of(klass)
+        klass.public_methods(false) & klass.methods(false)
       end
 
       def extract_class_from(method_name)

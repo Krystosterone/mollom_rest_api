@@ -8,7 +8,7 @@ module MollomRestApi
       end
 
       def self.an_overriden_post_action
-        post({authorId: 9}, "delete", "vtest02", "override")
+        post({authorId: 9}, "delete")
       end
 
       def self.a_get_list_action
@@ -16,7 +16,7 @@ module MollomRestApi
       end
 
       def self.an_overriden_get_action
-        get({status: :active}, "list", "vtest02", "override")
+        get({status: :active}, "list")
       end
 
       def self.delete
