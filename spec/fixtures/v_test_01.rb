@@ -11,7 +11,7 @@ module MollomRestApi
         post({authorId: 9}, "delete")
       end
 
-      def self.a_get_list_action
+      def self.list
         get
       end
 

@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dev.mollom.com/v1/blacklist/1lgj17lzuezlu1bn9ry4k3qz4k8nr42n?count=5
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_consumer_key="b06465615b3a8800ef79ca947b1addca", oauth_nonce="bxGeBFEd7ZBEwW7C9zHKPgIAs0dJ1thMdBUSpuoco4",
+        oauth_signature="UiA35v%2FZIgyxCD2L1i%2B5MG7VxsE%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1410374054", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Sep 2014 18:35:04 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"code":"200","list":{"entry":[{"context":"allFields","created":"1410369319158","id":"eafc878d-94f7-462d-bb67-49d5170a9a71","match":"contains","note":"","reason":"unwanted","status":"1","value":"patate-chaude"},{"context":"allFields","created":"1410369319342","id":"975805c8-ee06-4750-8cda-ec5626712c50","match":"contains","note":"","reason":"unwanted","status":"1","value":"system_32"}]},"listOffset":"0","listCount":"2","listTotal":"2"}'
+    http_version: 
+  recorded_at: Wed, 10 Sep 2014 18:34:14 GMT
+recorded_with: VCR 2.9.2

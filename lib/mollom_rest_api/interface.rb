@@ -35,7 +35,7 @@ class MollomRestApi::Interface
 
       throw_api_exception_using(response) unless response.code == '200'
 
-      computed_results_key = path_parameters.empty? && http_method == :get ? 'list' : results_key
+      computed_results_key = method_that_called_the_api_operation == 'list' ? 'list' : results_key
       JSON.parse(response.body)[computed_results_key]
     end
 
@@ -62,8 +62,8 @@ class MollomRestApi::Interface
     end
 
     def method_that_called_the_api_operation
-      method_nesting_level = 4
-      caller[method_nesting_level][/`([^']*)'/, 1]
+      index = caller.index { |callstack| callstack[/`([^']*)'/, 1] == 'request' }
+      caller[index + 2][/`([^']*)'/, 1]
     end
 
     def version_from_class_name

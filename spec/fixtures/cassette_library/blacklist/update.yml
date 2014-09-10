@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/v1/blacklist/1lgj17lzuezlu1bn9ry4k3qz4k8nr42n/42a51362-bab6-4256-8e28-60d5df568250
+    body:
+      encoding: US-ASCII
+      string: reason=profanity&value=patate
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="b06465615b3a8800ef79ca947b1addca", oauth_nonce="rcfXhqJGIZ3xmkIQU2iZ9ttmAEptalDjaqEDRHq90",
+        oauth_signature="yvE7DZFBEqT3WU6Q7HClPEeLfsU%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1410367899", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Tue, 02 Sep 2014 17:09:45 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"code":"200","entry":{"context":"allFields","created":"1409677772829","id":"41a0e033-3d6a-465b-87d5-1ef60476da62","match":"contains","note":"","reason":"profanity","status":"1","value":"patate"}}'
+    http_version:
+  recorded_at: Tue, 02 Sep 2014 17:09:00 GMT
+recorded_with: VCR 2.9.2
