@@ -1,7 +1,9 @@
 require 'mollom_rest_api'
 require 'fixtures/v_test_01'
-
 Dir["./spec/support/**/*.rb"].sort.each { |f| require f}
+
+require 'coveralls'
+Coveralls.wear!
 
 RSpec.configure do |c|
   c.before(:all) do
