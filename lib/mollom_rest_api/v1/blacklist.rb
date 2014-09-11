@@ -16,6 +16,10 @@ class MollomRestApi::V1::Blacklist < MollomRestApi::Interface
     get(request_parameters, [public_key])
   end
 
+  def self.read(public_key, blacklist_entry_id)
+    get({}, [public_key, blacklist_entry_id])
+  end
+
   class << self
     protected
 

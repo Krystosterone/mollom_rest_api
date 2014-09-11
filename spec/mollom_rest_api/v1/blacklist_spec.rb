@@ -49,4 +49,16 @@ describe MollomRestApi::V1::Blacklist do
 
     include_examples "api error handling", class_under_test: MollomRestApi::V1::Blacklist, method_under_test: :list, method_args: %w(public_key)
   end
+
+  describe :read do
+    context "when providing a public key and blacklist entry id", vcr: {cassette_name: "blacklist/read", record: :new_episodes} do
+      let(:response) {{"context"=>"allFields", "created"=>"1410452568617", "id"=>"68172853-2a81-4899-b09a-ff1f1bad88aa", "match"=>"contains", "note"=>"", "reason"=>"unwanted", "status"=>"1", "value"=>"text"}}
+
+      it "should return a json response containing the blacklist entry" do
+        expect(MollomRestApi::V1::Blacklist.read('1lgj17lzuezlu1bn9ry4k3qz4k8nr42n', '68172853-2a81-4899-b09a-ff1f1bad88aa')).to eq(response)
+      end
+    end
+
+    include_examples "api error handling", class_under_test: MollomRestApi::V1::Blacklist, method_under_test: :read, method_args: %w(public_key blacklist_entry_id)
+  end
 end
