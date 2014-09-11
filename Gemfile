@@ -2,6 +2,8 @@ source 'http://rubygems.org'
 
 gemspec
 
+gem 'coveralls', require: false
+
 group :development do
   gem 'guard'
   gem 'guard-rspec'
@@ -9,6 +11,7 @@ group :development do
 end
 
 group :test do
+  gem 'rake'
   gem 'rspec'
   gem 'webmock'
   gem 'vcr'

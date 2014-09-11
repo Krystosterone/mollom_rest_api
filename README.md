@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/Krystosterone/mollom_rest_api.svg?branch=master)](https://travis-ci.org/Krystosterone/mollom_rest_api)
+[![Coverage Status](https://coveralls.io/repos/Krystosterone/mollom_rest_api/badge.png?branch=master)](https://coveralls.io/r/Krystosterone/mollom_rest_api)
+
 # Mollom Rest API
 
 mollom_rest_api is a ruby wrapper, using oauth authentication, for the [Mollom](https://mollom.com) Rest API.
