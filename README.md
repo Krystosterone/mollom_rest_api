@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/Krystosterone/mollom_rest_api.svg?branch=master)](https://travis-ci.org/Krystosterone/mollom_rest_api)
-[![Coverage Status](https://coveralls.io/repos/Krystosterone/mollom_rest_api/badge.png?branch=master)](https://coveralls.io/r/Krystosterone/mollom_rest_api)
+[![Coverage Status](https://coveralls.io/repos/Krystosterone/mollom_rest_api/badge.png?branch=master)](https://coveralls.io/r/Krystosterone/mollom_rest_api?branch=master)
 
 # Mollom Rest API
 
