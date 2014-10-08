@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/v1/blacklist/1lgj17lzuezlu1bn9ry4k3qz4k8nr42n/42a51362-bab6-4256-8e28-60d5df568250/delete
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="b06465615b3a8800ef79ca947b1addca", oauth_nonce="YRrT2k8Ld5HxTavGNav7MvTFo5se6fUC9syL2UvwPUM",
+        oauth_signature="v%2BCn79%2F6kiO6FTnGDklgaygcA8M%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1410368605", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 10 Sep 2014 17:04:16 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"code":"200"}'
+    http_version: 
+  recorded_at: Wed, 10 Sep 2014 17:03:25 GMT
+recorded_with: VCR 2.9.2

@@ -6,7 +6,7 @@ module AlternateSyntaxMacro
       available_apis.each do |api|
         class_name = "#{described_class.name}::#{api}"
         target_class = class_name.constantize
-        class_methods = target_class.singleton_methods(false)
+        class_methods = receiver_public_methods_of(target_class)
 
         class_methods.each do |action|
           alternate_syntax = "#{action}_#{api.downcase}"
@@ -23,6 +23,12 @@ module AlternateSyntaxMacro
           end
         end
       end
+    end
+
+    private
+
+    def receiver_public_methods_of(klass)
+      klass.public_methods(false) & klass.methods(false)
     end
   end
 

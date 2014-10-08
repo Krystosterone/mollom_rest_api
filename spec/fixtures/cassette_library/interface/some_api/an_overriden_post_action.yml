@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://dev.mollom.com/vtest02/override/delete
+    uri: http://dev.mollom.com/vtest01/ticket/delete
     body:
       encoding: US-ASCII
       string: authorId=9
@@ -27,6 +27,6 @@ http_interactions:
       message: OK
     body:
       encoding: UTF-8
-      string: '{"code":"200","override":"Valid response."}'
+      string: '{"code":"200","ticket":"Valid response."}'
   recorded_at: Wed, 25 Jun 2014 15:45:19 GMT
 recorded_with: VCR 2.9.2

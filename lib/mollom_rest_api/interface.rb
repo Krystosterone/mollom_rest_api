@@ -5,29 +5,38 @@ class MollomRestApi::Interface
   class << self
     protected
 
-    def post(request_parameters = {}, path_parameters = [], version = nil, path = nil)
-      request(:post, request_parameters, path_parameters, version, path)
+    def results_key
+      path_from_class_name
     end
 
-    def get(request_parameters = {}, path_parameters = [], version = nil, path = nil)
-      request(:get, request_parameters, path_parameters, version, path)
+    def path
+      path_from_class_name
+    end
+
+    def version
+      version_from_class_name
+    end
+
+    def post(request_parameters = {}, path_parameters = [])
+      request(:post, request_parameters, path_parameters)
+    end
+
+    def get(request_parameters = {}, path_parameters = [])
+      request(:get, request_parameters, path_parameters)
     end
 
     private
 
-    def request(http_method, request_parameters, path_parameters, version, path)
+    def request(http_method, request_parameters, path_parameters)
       ensure_configuration_is_valid!
-
-      version ||= version_from_class_name
-      path ||= path_from_class_name
 
       request_arguments = request_arguments(http_method, path, path_parameters, request_parameters, version)
       response = MollomRestApi.oauth_access_token.request(http_method, *request_arguments)
 
       throw_api_exception_using(response) unless response.code == '200'
 
-      results_key = path_parameters.empty? && http_method == :get ? 'list' : path
-      JSON.parse(response.body)[results_key]
+      computed_results_key = method_that_called_the_api_operation == 'list' ? 'list' : results_key
+      JSON.parse(response.body)[computed_results_key]
     end
 
     def ensure_configuration_is_valid!
@@ -53,8 +62,8 @@ class MollomRestApi::Interface
     end
 
     def method_that_called_the_api_operation
-      method_nesting_level = 4
-      caller[method_nesting_level][/`([^']*)'/, 1]
+      index = caller.index { |callstack| callstack[/`([^']*)'/, 1] == 'request' }
+      caller[index + 2][/`([^']*)'/, 1]
     end
 
     def version_from_class_name
