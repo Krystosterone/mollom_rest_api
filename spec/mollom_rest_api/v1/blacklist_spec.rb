@@ -51,7 +51,7 @@ describe MollomRestApi::V1::Blacklist do
   end
 
   describe :read do
-    context "when providing a public key and blacklist entry id", vcr: {cassette_name: "blacklist/read", record: :new_episodes} do
+    context "when providing a public key and blacklist entry id", vcr: {cassette_name: "blacklist/read"} do
       let(:response) {{"context"=>"allFields", "created"=>"1410452568617", "id"=>"68172853-2a81-4899-b09a-ff1f1bad88aa", "match"=>"contains", "note"=>"", "reason"=>"unwanted", "status"=>"1", "value"=>"text"}}
 
       it "should return a json response containing the blacklist entry" do

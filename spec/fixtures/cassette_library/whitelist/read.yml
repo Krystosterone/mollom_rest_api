@@ -1,0 +1,39 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dev.mollom.com/v1/whitelist/1lgj17lzuezlu1bn9ry4k3qz4k8nr42n/79557
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - OAuth gem v0.4.7
+      Authorization:
+      - OAuth oauth_consumer_key="b06465615b3a8800ef79ca947b1addca", oauth_nonce="C7UKDXos04eCPCSWclZhllg88b30Q4x1Awiaus",
+        oauth_signature="22%2B8POMgeopz%2FrpykK0pAno%2BOA8%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1413826653", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Mon, 20 Oct 2014 17:38:52 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"code":"200","entry":{"context":"authorName","created":"1413826721455","id":"79557","lastMatch":"0","matchCount":"0","status":"1","value":"patate"}}'
+    http_version: 
+  recorded_at: Mon, 20 Oct 2014 17:37:33 GMT
+recorded_with: VCR 2.9.2

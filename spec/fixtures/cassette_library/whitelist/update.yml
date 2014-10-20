@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: http://dev.mollom.com/v1/whitelist/1lgj17lzuezlu1bn9ry4k3qz4k8nr42n/76747
+    body:
+      encoding: US-ASCII
+      string: context=authorName&value=patate
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - OAuth gem v0.4.7
+      Content-Length:
+      - '0'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Authorization:
+      - OAuth oauth_consumer_key="b06465615b3a8800ef79ca947b1addca", oauth_nonce="iCGPgyj77kMA1r1PNbc1luGMeD3awPTGS1k1WTNlXS0",
+        oauth_signature="HWfaBwqszvmjdfk1QvJUIxClQvc%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1412788255", oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      X-Powered-By:
+      - Servlet/3.0 JSP/2.2 (GlassFish Server Open Source Edition 3.1.2.2 Java/Oracle
+        Corporation/1.7)
+      Server:
+      - GlassFish Server Open Source Edition 3.1.2.2
+      Content-Type:
+      - application/json
+      Date:
+      - Wed, 08 Oct 2014 17:12:05 GMT
+      Connection:
+      - close
+    body:
+      encoding: US-ASCII
+      string: ! '{"code":"200","entry":{"context":"authorName","created":"1412787909465","id":"76747","lastMatch":"0","matchCount":"0","status":"0","value":"patate"}}'
+    http_version: 
+  recorded_at: Wed, 08 Oct 2014 17:10:55 GMT
+recorded_with: VCR 2.9.2
