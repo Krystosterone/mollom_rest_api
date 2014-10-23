@@ -5,6 +5,10 @@
 
 mollom_rest_api is a ruby wrapper, using oauth authentication, for the [Mollom](https://mollom.com) Rest API.
 
+Tested against:
+- Ruby 1.9.3
+- Ruby 2.1.2
+
 ## Installation
 
 Add to your Gemfile:
@@ -83,4 +87,5 @@ MollomRestApi::V1::verify_captcha("captchaId", "solution", {authorName: "Bob", .
 
 ### Contributors
 + [royjs](https://github.com/royjs)
++ [nicholaslemay](https://github.com/nicholaslemay)
 + [krystosterone](https://github.com/krystosterone)
