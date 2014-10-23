@@ -1,7 +1,7 @@
 require "spec_helper"
 
 describe MollomRestApi::V1::Captcha do
-  describe :create_captcha do
+  describe :create do
     context "when no type is passed", vcr: {cassette_name: "captcha/create/default_request"} do
       let(:response) {{"id"=>"TEST1wquvxygw6nkom", "url"=>"http://dev.mollom.com/v1/captcha/TEST1wquvxygw6nkom.png"}}
 
@@ -29,7 +29,7 @@ describe MollomRestApi::V1::Captcha do
     include_examples "api error handling", class_under_test: MollomRestApi::V1::Captcha, method_under_test: :create
   end
 
-  describe :verify_captcha do
+  describe :verify do
     context "when an invalid captcha id is passed", vcr: {cassette_name: "captcha/verify/invalid_captcha_id"} do
       it "should raise an exception" do
         expect{MollomRestApi::V1::Captcha.verify('inexistent_id', 'solution')}.to raise_exception do |exception|
@@ -58,6 +58,6 @@ describe MollomRestApi::V1::Captcha do
       end
     end
 
-    include_examples "api error handling", class_under_test: MollomRestApi::V1::Captcha, method_under_test: :verify, method_args: [[9000], 'a_solution']
+    include_examples "api error handling", class_under_test: MollomRestApi::V1::Captcha, method_under_test: :verify, method_args: [9000, 'a_solution']
   end
 end

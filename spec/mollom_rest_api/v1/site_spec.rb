@@ -39,19 +39,23 @@ describe MollomRestApi::V1::Site do
     include_examples "api error handling", class_under_test: MollomRestApi::V1::Site, method_under_test: :list
   end
 
-  describe :read, vcr: {cassette_name: 'site/read'} do
-    let(:response) { {"publicKey"=>"1cu4vdx7a6m9c1jc2425k1o9r8me2mrz", "privateKey"=>"1khj0vgpcqtjfwbbl5fr3wiykmr2ajro", "url"=>"http://url", "email"=>"an-email@gmail.com", "platformName"=>"Drupal", "platformVersion"=>"6.20", "expectedLanguages"=>nil} }
+  describe :read do
+    context 'when fetching a specific site', vcr: {cassette_name: 'site/read'} do
+      let(:response) { {"publicKey"=>"1cu4vdx7a6m9c1jc2425k1o9r8me2mrz", "privateKey"=>"1khj0vgpcqtjfwbbl5fr3wiykmr2ajro", "url"=>"http://url", "email"=>"an-email@gmail.com", "platformName"=>"Drupal", "platformVersion"=>"6.20", "expectedLanguages"=>nil} }
 
-    it 'should return the site' do
-      expect(MollomRestApi::V1::Site.read('1cu4vdx7a6m9c1jc2425k1o9r8me2mrz')).to eq(response)
+      it 'should return the site' do
+        expect(MollomRestApi::V1::Site.read('1cu4vdx7a6m9c1jc2425k1o9r8me2mrz')).to eq(response)
+      end
     end
 
     include_examples "api error handling", class_under_test: MollomRestApi::V1::Site, method_under_test: :read, method_args: ['a_public_key']
   end
 
-  describe :delete, vcr: {cassette_name: 'site/delete'} do
-    it 'should delete a site' do
-      expect{MollomRestApi::V1::Site.delete('1cu4vdx7a6m9c1jc2425k1o9r8me2mrz')}.not_to raise_error
+  describe :delete do
+    context 'when deleting a specific site', vcr: {cassette_name: 'site/delete'} do
+      it 'should delete a site' do
+        expect{MollomRestApi::V1::Site.delete('1cu4vdx7a6m9c1jc2425k1o9r8me2mrz')}.not_to raise_error
+      end
     end
 
     include_examples "api error handling", class_under_test: MollomRestApi::V1::Site, method_under_test: :delete, method_args: ['a_public_key']

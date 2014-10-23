@@ -11,12 +11,12 @@ module MollomRestApi
         post({authorId: 9}, "delete")
       end
 
-      def self.list
-        get
-      end
-
       def self.an_overriden_get_action
         get({status: :active}, "list")
+      end
+
+      def self.list
+        get
       end
 
       def self.delete
