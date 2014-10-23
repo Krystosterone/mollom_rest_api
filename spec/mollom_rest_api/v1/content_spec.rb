@@ -1,17 +1,19 @@
 require "spec_helper"
 
 describe MollomRestApi::V1::Content do
-  describe :check do
-    context "when the api responded correctly", vcr: {cassette_name: "content/check/valid_request"} do
-      let(:request_parameters) {{postTitle: "My Title", postBody: "Some text right over here!", authorName: "Jean-Luc Picard"}}
-      let(:response) {{"id"=>"TEST1up51ut7qyu2b1", "spamScore"=>"0.5", "reason"=>"some secret reason", "postTitle"=>"My Title", "postBody"=>"Some text right over here!", "spamClassification"=>"unsure"}}
+  [:create, :check].each do |action|
+    describe action do
+      context "when the api responded correctly", vcr: {cassette_name: "content/create"} do
+        let(:request_parameters) {{postTitle: "My Title", postBody: "Some text right over here!", authorName: "Jean-Luc Picard"}}
+        let(:response) {{"id"=>"TEST1up51ut7qyu2b1", "spamScore"=>"0.5", "reason"=>"some secret reason", "postTitle"=>"My Title", "postBody"=>"Some text right over here!", "spamClassification"=>"unsure"}}
 
-      it "should return a json response classifying the content" do
-        expect(MollomRestApi::V1::Content.check(request_parameters)).to eq(response)
+        it "should return a json response classifying the content" do
+          expect(MollomRestApi::V1::Content.send(action, request_parameters)).to eq(response)
+        end
       end
-    end
 
-    include_examples "api error handling", class_under_test: MollomRestApi::V1::Content, method_under_test: :check
+      include_examples "api error handling", class_under_test: MollomRestApi::V1::Content, method_under_test: action
+    end
   end
 
   describe :update do

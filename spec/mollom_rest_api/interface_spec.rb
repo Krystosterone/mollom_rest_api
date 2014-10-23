@@ -25,8 +25,8 @@ describe MollomRestApi::Interface do
     include_examples "api error handling", class_under_test: MollomRestApi::VTest01::Ticket, method_under_test: :an_overriden_get_action
   end
 
-  describe 'a get action to fetch a list', vcr: {cassette_name: 'interface/some_api/a_get_list_action'} do
-    it "should call the correct url using the overriden properties in the method" do
+  describe 'a get action to fetch a list', vcr: {cassette_name: 'interface/some_api/list'} do
+    it "should call the correct url using the method name" do
       expect(MollomRestApi::VTest01::Ticket.list).to eq('Valid response.')
     end
 
